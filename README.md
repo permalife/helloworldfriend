@@ -42,12 +42,12 @@ celeryhwf                        RUNNING   pid 77340, uptime 3:18:36
 gunicorn                         RUNNING   pid 81496, uptime 2:14:03
 rabbitmq-server                  RUNNING   pid 77339, uptime 3:18:36
 ```
-For each of the services the output is directed to a log file, `<service_name>.log`. If supervisor fails to locate a particular service, the corresponding log file will have the necessary information. Note that it expects each of three services to be found in the system *PATH*.
+For each of the services the output is directed to a log file, `<service_name>.log`. If supervisor fails to locate a particular service, the corresponding log file will have the necessary information. Note that it expects each of three services to be found in the system `PATH`.
 
-The web server is started on port *8000* and the endpoint served by the app is at `http://localhost:8000/greet/`
+The web server is started on port `8000` and the endpoint served by the app is at `http://localhost:8000/greet/`
 
 ## Testing the app
-To quickly test various use cases, run:
+To quickly test several common use cases, run:
 ```
 python manage.py test
 ```
