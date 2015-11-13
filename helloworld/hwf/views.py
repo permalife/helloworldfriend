@@ -17,7 +17,7 @@ class GreetFriendView(FormView):
     Django view that serves the endpoint (greet/)
     """
     form_class = GreetingForm
-    
+
     # basic template to use for generating responses to the user
     template_name = 'response.html'
 
@@ -71,7 +71,7 @@ class GreetFriendView(FormView):
                 )
                 logger.info(logger_msg)
 
-                # compute the time offset for the greeting 
+                # compute the time offset for the greeting
                 td_delay = data['datetime'] - datetime.utcnow()
 
                 # call the method for sending the greeting
@@ -100,7 +100,8 @@ class GreetFriendView(FormView):
 
     def send_greeting(self, name, td_delay):
         """
-        Spin off a background task for sending the greeting at the given delay. This can be extended with other greeting methods such as email, social media, etc.
+        Spin off a background task for sending the greeting at the given delay.
+        This can be extended with other greeting methods such as email, social media, etc.
         """
         tasks.greet_friend.apply_async(
             (name,),
